@@ -294,7 +294,7 @@ export default function App() {
                     className="block"
                     style={{ color: "var(--text-muted)" }}
                   >
-                    Kuzhalmannam, Palakkad
+                    Parappana, Kinassery, Palakkad
                   </span>
                 </p>
               </div>
