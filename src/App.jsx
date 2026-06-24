@@ -289,7 +289,7 @@ export default function App() {
                   className="mt-3 text-sm font-medium"
                   style={{ color: "var(--text-heading)" }}
                 >
-                  Parappana Masjid Hall
+                  Parappana Masjid
                   <span
                     className="block"
                     style={{ color: "var(--text-muted)" }}
