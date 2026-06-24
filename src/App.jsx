@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { CalendarHeart, Clock, MapPin, Navigation, X } from "lucide-react";
 
-const TARGET_DATE = new Date("2026-07-13T11:00:00+05:30");
+const TARGET_DATE = new Date("2026-07-13T10:30:00+05:30");
 
 function useCountdown(targetDate) {
   const calc = () => {
@@ -221,37 +221,38 @@ export default function App() {
               border: "1px solid var(--ring-color)",
             }}
           >
+            {/* Date banner */}
+            <div
+              className="rounded-2xl p-4 text-center"
+              style={{ backgroundColor: "var(--bg-accent)" }}
+            >
+              <CalendarHeart
+                className="mx-auto mb-2 h-5 w-5"
+                style={{ color: "var(--accent-primary)" }}
+              />
+              <p
+                className="text-sm font-medium"
+                style={{ color: "var(--text-heading)" }}
+              >
+                Monday, July 13th 2026
+                <span
+                  className="ml-2"
+                  style={{ color: "var(--text-muted)" }}
+                >
+                  · 28 Muharram 1448 AH
+                </span>
+              </p>
+            </div>
+
+            {/* ── The Nikkah ── */}
             <h2
-              className="font-serif text-3xl sm:text-4xl"
+              className="mt-8 font-serif text-3xl sm:text-4xl"
               style={{ color: "var(--text-heading)" }}
             >
               The Nikkah
             </h2>
 
-            <div className="mt-8 grid gap-6 text-center sm:grid-cols-3">
-              {/* Date */}
-              <div
-                className="rounded-3xl p-5"
-                style={{ backgroundColor: "var(--bg-accent)" }}
-              >
-                <CalendarHeart
-                  className="mx-auto h-6 w-6"
-                  style={{ color: "var(--accent-primary)" }}
-                />
-                <p
-                  className="mt-3 text-sm font-medium"
-                  style={{ color: "var(--text-heading)" }}
-                >
-                  Monday, July 13th 2026
-                  <span
-                    className="block"
-                    style={{ color: "var(--text-muted)" }}
-                  >
-                    28 Muharram 1448 AH
-                  </span>
-                </p>
-              </div>
-
+            <div className="mt-5 grid gap-6 text-center sm:grid-cols-2">
               {/* Time */}
               <div
                 className="rounded-3xl p-5"
@@ -265,12 +266,74 @@ export default function App() {
                   className="mt-3 text-sm font-medium"
                   style={{ color: "var(--text-heading)" }}
                 >
-                  Ceremony begins exactly at
+                  Ceremony begins at
                   <span
                     className="block"
                     style={{ color: "var(--text-muted)" }}
                   >
-                    11:00 AM
+                    10:30 AM
+                  </span>
+                </p>
+              </div>
+
+              {/* Venue */}
+              <div
+                className="rounded-3xl p-5"
+                style={{ backgroundColor: "var(--bg-accent)" }}
+              >
+                <MapPin
+                  className="mx-auto h-6 w-6"
+                  style={{ color: "var(--accent-primary)" }}
+                />
+                <p
+                  className="mt-3 text-sm font-medium"
+                  style={{ color: "var(--text-heading)" }}
+                >
+                  Parappana Masjid Hall
+                  <span
+                    className="block"
+                    style={{ color: "var(--text-muted)" }}
+                  >
+                    Kuzhalmannam, Palakkad
+                  </span>
+                </p>
+              </div>
+            </div>
+
+            {/* Divider */}
+            <div
+              className="my-8 h-px w-full"
+              style={{ backgroundColor: "var(--ring-color)" }}
+            />
+
+            {/* ── Post-Nikkah Celebration ── */}
+            <h2
+              className="font-serif text-3xl sm:text-4xl"
+              style={{ color: "var(--text-heading)" }}
+            >
+              Post-Nikkah Celebration
+            </h2>
+
+            <div className="mt-5 grid gap-6 text-center sm:grid-cols-2">
+              {/* Time */}
+              <div
+                className="rounded-3xl p-5"
+                style={{ backgroundColor: "var(--bg-accent)" }}
+              >
+                <Clock
+                  className="mx-auto h-6 w-6"
+                  style={{ color: "var(--accent-primary)" }}
+                />
+                <p
+                  className="mt-3 text-sm font-medium"
+                  style={{ color: "var(--text-heading)" }}
+                >
+                  Celebrations begin from
+                  <span
+                    className="block"
+                    style={{ color: "var(--text-muted)" }}
+                  >
+                    11:30 AM onwards
                   </span>
                 </p>
               </div>
