@@ -2,12 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  body {
-    @apply bg-nocturnal text-ivory font-sans antialiased;
-  }
-  
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-serif;
-  }
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  /* Warm pastel palette */
+  --bg-primary: #f5e6e0;       /* Soft blush */
+  --bg-card: rgba(255, 249, 245, 0.75);  /* Warm cream, semi-transparent */
+  --bg-card-solid: #fff9f5;
+  --bg-accent: rgba(180, 148, 130, 0.12); /* Warm taupe tint */
+  --text-primary: #3b3330;      /* Warm dark brown */
+  --text-heading: #5c3d2e;      /* Rich warm brown */
+  --text-muted: #9c8578;        /* Dusty rose-brown */
+  --text-accent: #7a5c50;       /* Muted terracotta */
+  --accent-primary: #8b6f5c;    /* Warm taupe */
+  --accent-hover: #6d503f;      /* Deeper taupe */
+  --ring-color: rgba(180, 148, 130, 0.3);
+  --shadow-color: rgba(90, 60, 40, 0.08);
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+}
+
+/* Custom scrollbar for premium feel */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent-primary);
+  border-radius: 3px;
 }
