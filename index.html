@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+
+<html class="dark scroll-smooth" lang="en" style=""><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Muhammed Sanoof N &amp; Sifana M - Nikkah Invitation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Eb+Garamond:wght@400;500;700&amp;family=Manrope:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Inter:wght@400;500;600&amp;family=Great+Vibes&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://unpkg.com/webgl-shader-element@0.1.3/dist/webgl-shader-element.esm.js" type="module"></script>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "primary": "#e6c888",
+                "on-primary": "#3d2e00",
+                "primary-container": "#584400",
+                "on-primary-container": "#ffeaaf",
+                "secondary": "#b8ccb6",
+                "on-secondary": "#233423",
+                "tertiary": "#d4c8b2",
+                "on-tertiary": "#363020",
+                "surface": "#121412",
+                "surface-variant": "#414942",
+                "on-surface": "#e2e3de",
+                "on-surface-variant": "#c1c9c0",
+                "outline": "#8c938d",
+                "outline-variant": "#414942",
+                "surface-container-lowest": "#0d0f0d",
+                "surface-container-low": "#1a1c1a",
+                "surface-container": "#1e201e",
+                "surface-container-high": "#282a28",
+                "surface-container-highest": "#333532",
+                "surface-bright": "#383a37"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px",
+                "2xl": "1rem",
+                "3xl": "1.5rem"
+        },
+        "spacing": {
+                "lg": "24px",
+                "sm": "8px",
+                "xl": "32px",
+                "gutter": "16px",
+                "md": "16px",
+                "base": "8px",
+                "xs": "4px",
+                "margin": "24px"
+        },
+        "fontFamily": {
+                "body-lg": [
+                        "Manrope"
+                ],
+                "body-md": [
+                        "Manrope"
+                ],
+                "label-md": [
+                        "Manrope"
+                ],
+                "headline-lg": [
+                        "Eb Garamond"
+                ],
+                "headline-md": [
+                        "Eb Garamond"
+                ],
+                "script": ["'Great Vibes'", "cursive"]
+        },
+        "fontSize": {
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "28px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "24px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "label-md": [
+                        "14px",
+                        {
+                                "lineHeight": "20px",
+                                "letterSpacing": "0.02em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "headline-lg": [
+                        "40px",
+                        {
+                                "lineHeight": "48px",
+                                "fontWeight": "500"
+                        }
+                ],
+                "headline-md": [
+                        "32px",
+                        {
+                                "lineHeight": "40px",
+                                "fontWeight": "500"
+                        }
+                ]
+        },
+        "boxShadow": {
+            "premium-card": "0 10px 40px -10px rgba(0, 0, 0, 0.5)",
+            "premium-btn": "0 4px 14px 0 rgba(230, 200, 136, 0.3)",
+            "glow": "0 0 30px rgba(230, 200, 136, 0.15)"
+        }
+},
+    },
+  }
+</script>
+<style>
+        .glass-panel {
+            background: rgba(30, 32, 30, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .premium-border {
+            border: 1px solid theme('colors.outline-variant');
+            position: relative;
+        }
+        
+        .premium-border::after {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            right: 8px;
+            bottom: 8px;
+            border: 1px solid rgba(230, 200, 136, 0.15);
+            pointer-events: none;
+            border-radius: inherit;
+        }
+
+        /* Animation Classes */
+        .fade-up-enter {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .fade-up-enter-active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .slow-fade {
+            animation: slowFade 2s ease-in-out forwards;
+        }
+
+        @keyframes slowFade {
+            from { opacity: 0; filter: blur(4px); }
+            to { opacity: 1; filter: blur(0); }
+        }
+        
+        /* Modal transitions */
+        .modal-enter { opacity: 0; transform: scale(0.95); }
+        .modal-enter-active { opacity: 1; transform: scale(1); transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+        .modal-leave { opacity: 1; transform: scale(1); }
+        .modal-leave-active { opacity: 0; transform: scale(0.95); transition: all 0.3s ease-in; }
+
+        .paper-texture {
+            background-color: transparent;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+        }
+    </style>
+</head>
+<body class="font-body-md antialiased overflow-x-hidden selection:bg-surface-variant selection:text-on-surface text-on-surface paper-texture bg-transparent">
+<!-- STITCH_SHADER_START:ANIMATION_24 class="fixed inset-0 w-full h-full -z-10" -->
+<div class="fixed inset-0 w-full h-full -z-10" style="display:block;">
+<canvas height="3384" id="shader-canvas-ANIMATION_24" style="display:block;width:100%;height:100%" width="1280"></canvas>
+<script>
+(function() {
+  const canvas = document.getElementById('shader-canvas-ANIMATION_24');
+
+  // Sync the WebGL drawing-buffer size with the CSS-driven layout size.
+  // This fires on initial layout and whenever the element is resized.
+  function syncSize() {
+    const w = canvas.clientWidth  || 1280;
+    const h = canvas.clientHeight || 720;
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width  = w;
+      canvas.height = h;
+    }
+  }
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(syncSize).observe(canvas);
+  }
+  syncSize();
+
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+  if (!gl) return;
+  const vs = `attribute vec2 a_position;
+varying vec2 v_texCoord;
+void main() {
+  v_texCoord = a_position * 0.5 + 0.5;
+  gl_Position = vec4(a_position, 0.0, 1.0);
+}`;
+  const fs = `precision highp float;
+
+uniform float u_time;
+uniform vec2 u_resolution;
+uniform vec2 u_mouse;
+
+varying vec2 v_texCoord;
+
+float hash(vec2 p) {
+    p = fract(p * vec2(123.34, 456.21));
+    p += dot(p, p + 45.32);
+    return fract(p.x * p.y);
+}
+
+void main() {
+    vec2 uv = v_texCoord;
+    vec2 pos = uv * u_resolution.xy / max(u_resolution.x, u_resolution.y);
+    
+    // Background base (dark, matching surface)
+    vec3 color = vec3(0.07, 0.08, 0.07); 
+    
+    // Stardust layers
+    for(float i = 1.0; i < 4.0; i++) {
+        vec2 grid = floor(pos * 100.0 * i);
+        vec2 f = fract(pos * 100.0 * i) - 0.5;
+        
+        float h = hash(grid);
+        if(h > 0.98) {
+            float blink = 0.5 + 0.5 * sin(u_time * 2.0 + h * 6.28);
+            float size = 0.05 * h;
+            float dist = length(f);
+            float star = smoothstep(size, 0.0, dist);
+            color += star * blink * vec3(1.0, 0.9, 0.7); // Warm starlight
+        }
+    }
+    
+    gl_FragColor = vec4(color, 1.0);
+}`;
+  function cs(type, src) {
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    return s;
+  }
+  const prog = gl.createProgram();
+  gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
+  gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
+  gl.linkProgram(prog);
+  gl.useProgram(prog);
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+  const pos = gl.getAttribLocation(prog, 'a_position');
+  gl.enableVertexAttribArray(pos);
+  gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+  const uTime = gl.getUniformLocation(prog, 'u_time');
+  const uRes = gl.getUniformLocation(prog, 'u_resolution');
+  const uMouse = gl.getUniformLocation(prog, 'u_mouse');
+
+  // u_mouse is in pixel coordinates matching u_resolution (ShaderToy convention).
+  // Shaders that need normalized coords should use: u_mouse / u_resolution.
+  let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+  window.addEventListener('mousemove', (event) => {
+    const rect = canvas.getBoundingClientRect();
+    if (rect.width && rect.height) {
+      const nx = (event.clientX - rect.left) / rect.width;
+      const ny = 1.0 - (event.clientY - rect.top) / rect.height;
+      mouse.x = nx * canvas.width;
+      mouse.y = ny * canvas.height;
+    }
+  });
+
+  function render(t) {
+    if (typeof ResizeObserver === 'undefined') syncSize();
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    if (uTime) gl.uniform1f(uTime, t * 0.001);
+    if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
+    if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    requestAnimationFrame(render);
+  }
+  render(0);
+})();
+</script>
+</div>
+<!-- STITCH_SHADER_END:ANIMATION_24 -->
+<!-- Top AppBar (From JSON) -->
+<header class="bg-surface/90 backdrop-blur-md text-on-surface fixed top-0 w-full z-50 transition-all duration-300 ease-in-out bg-transparent border-none">
+<div class="flex justify-between items-center px-margin md:px-xl py-4 max-w-[1200px] mx-auto">
+<div>
+<img alt="M&amp;S Monogram" class="h-10 w-auto invert" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASnhxIC6mtF7LHsrtg_4dCQiNK2wYrA3JvbQ7PbRQFQuNLV3bTK-CsICXsis9UXD-BxRW8K0so9sJIUiLLT7yZvLW0AODc6pAGqCqKGthz7otBgOLHTJYzxF0mxk45ztFrOYiBC9UQstVrbGOFCeLsX2_banqHp4Z4G3ofWMoEiKemB3bHUoA42tuX31mqSsk7UKc7MHwBLKQa0gdL4YbQ095ylOtdCmSBQwRDX0DSg42lGAzZu41Zv96lLq-zbJrHwC-0M32TB7JG"/>
+</div>
+<nav class="hidden md:flex gap-6 items-center">
+<!-- Suppressed navigation items as this is a single page intent, focusing on the main canvas -->
+</nav>
+<button class="text-primary font-bold hover:opacity-80 transition-opacity tracking-wider uppercase" onclick="openRSVP()">
+                RSVP
+            </button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-[921px] flex flex-col items-center justify-center pt-24 px-margin md:px-xl">
+<!-- Background Element -->
+<div class="absolute inset-0 z-0 overflow-hidden pointer-events-none opacity-20">
+<img class="w-full h-full object-cover object-top mix-blend-screen invert" data-alt="Delicate watercolor botanical motifs" src="https://lh3.googleusercontent.com/aida/AP1WRLvSbDE56lYBTZRdYr5Mc3t6mXbE3Y7V8YnekwI4Ht_JJgx7rYsICeX5TpCP90-jzl4ZEkFvijhMH_xlKcQbEQFZoqSdBz3jd1l5q_ty8yNHVZKrv8MURzvc8rjCnUsmKyRcTWZ2x3nYQ1W9XAHgA5AkiXhc78NmAZvXy0ujgAG0Qi-MpaX5AE19qGIqnIm8VDnnSMbTF2Sv36mpcQUiVPOPoOUm8yeGr4oX8EyJTXDN3ODkWlmwCqIGdTs"/>
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-surface/40 to-transparent"></div>
+</div>
+<div class="z-10 text-center max-w-4xl mx-auto slow-fade flex flex-col items-center gap-md w-full relative">
+<p class="font-script text-2xl md:text-3xl mb-2 text-tertiary">
+                    Bismillah hir-Rahman nir-Rahim
+                </p>
+<p class="font-body-md uppercase tracking-widest text-sm md:text-base mb-6 text-on-surface-variant">
+                    Together with their families
+                </p>
+<div class="relative w-full max-w-lg mx-auto mb-6 p-4 rounded-2xl premium-border shadow-glow bg-surface-container-low/50">
+<img alt="Muhammed Sanoof N &amp; Sifana M - Nocturnal Heritage" class="w-full h-auto mix-blend-screen" src="https://lh3.googleusercontent.com/aida/AP1WRLtobPVTfcCYD9BInKE1oYh-x3B7_908Xgl-x3w33Xm4HARGbRLdTD3IeGVcob-rKk-_KecP1Rpg8NLC1IsD9TV7WwSoccT9__eDZaN-3FAf288xd5S96sQuTWQ6V3Rpm_GtYJM-7m_doK8QOoeOZtfQk8O8wjzepgAEiIbwd_HXUtQh9BRFXNTIXh2RfDEXhCMV-LVIY_wreMMIbl8JIrX-fKrU8dm7h2OSRjSaOIvHhv1TT6S0vowMworK"/>
+</div>
+<h1 class="font-headline-lg md:text-[64px] leading-tight mb-6 text-primary scale-110 md:scale-100 font-bold">
+                    Muhammed Sanoof N<br/><span class="text-tertiary text-2xl md:text-4xl md:text-6xl font-normal">&amp;</span><br/>Sifana M
+                </h1>
+<p class="font-body-lg max-w-lg mx-auto text-on-surface-variant">
+                    Request the honor of your presence at their Nikkah ceremony.
+                </p>
+<div class="mt-8">
+<span class="material-symbols-outlined text-primary animate-bounce" style='font-variation-settings: "FILL" 0; font-size: 32px;'>
+                        expand_more
+                    </span>
+</div>
+</div>
+</section>
+<!-- Countdown Section -->
+<section class="py-[64px] md:py-[120px] px-margin md:px-xl relative">
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+<img class="w-full h-full object-cover mix-blend-screen invert rotate-180" src="https://lh3.googleusercontent.com/aida/AP1WRLvSbDE56lYBTZRdYr5Mc3t6mXbE3Y7V8YnekwI4Ht_JJgx7rYsICeX5TpCP90-jzl4ZEkFvijhMH_xlKcQbEQFZoqSdBz3jd1l5q_ty8yNHVZKrv8MURzvc8rjCnUsmKyRcTWZ2x3nYQ1W9XAHgA5AkiXhc78NmAZvXy0ujgAG0Qi-MpaX5AE19qGIqnIm8VDnnSMbTF2Sv36mpcQUiVPOPoOUm8yeGr4oX8EyJTXDN3ODkWlmwCqIGdTs"/>
+</div>
+<div class="max-w-2xl mx-auto text-center fade-up-element fade-up-enter fade-up-enter-active relative z-10 glass-panel premium-border rounded-2xl p-8 shadow-premium-card">
+<h2 class="font-headline-md text-tertiary mb-8">The Countdown</h2>
+<div class="flex justify-center items-center gap-4 md:gap-8">
+<div class="flex flex-col items-center">
+<span class="font-headline-lg text-primary" id="days">19</span>
+<span class="font-label-md text-on-surface-variant mt-2 uppercase tracking-widest">Days</span>
+</div>
+<div class="w-px h-12 bg-outline-variant"></div>
+<div class="flex flex-col items-center">
+<span class="font-headline-lg text-primary" id="hours">05</span>
+<span class="font-label-md text-on-surface-variant mt-2 uppercase tracking-widest">Hrs</span>
+</div>
+<div class="w-px h-12 bg-outline-variant"></div>
+<div class="flex flex-col items-center">
+<span class="font-headline-lg text-primary" id="minutes">22</span>
+<span class="font-label-md text-on-surface-variant mt-2 uppercase tracking-widest">Mins</span>
+</div>
+<div class="w-px h-12 bg-outline-variant hidden md:block"></div>
+<div class="flex flex-col items-center hidden md:flex">
+<span class="font-headline-lg text-primary" id="seconds">04</span>
+<span class="font-label-md text-on-surface-variant mt-2 uppercase tracking-widest">Secs</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Details Card Section -->
+<section class="py-[64px] md:py-[120px] px-margin md:px-xl relative">
+<div class="max-w-2xl mx-auto glass-panel premium-border rounded-3xl p-8 md:p-16 shadow-premium-card fade-up-element fade-up-enter text-center fade-up-enter-active relative overflow-hidden">
+<!-- Subtle floral accent inside card -->
+<div class="absolute top-0 left-0 w-full h-40 opacity-10 pointer-events-none mix-blend-screen invert" style='background-image: url("https://lh3.googleusercontent.com/aida/AP1WRLvSbDE56lYBTZRdYr5Mc3t6mXbE3Y7V8YnekwI4Ht_JJgx7rYsICeX5TpCP90-jzl4ZEkFvijhMH_xlKcQbEQFZoqSdBz3jd1l5q_ty8yNHVZKrv8MURzvc8rjCnUsmKyRcTWZ2x3nYQ1W9XAHgA5AkiXhc78NmAZvXy0ujgAG0Qi-MpaX5AE19qGIqnIm8VDnnSMbTF2Sv36mpcQUiVPOPoOUm8yeGr4oX8EyJTXDN3ODkWlmwCqIGdTs"); background-size: cover; background-position: center top;'></div>
+<div class="absolute bottom-0 left-0 w-full h-40 opacity-10 pointer-events-none rotate-180 mix-blend-screen invert" style='background-image: url("https://lh3.googleusercontent.com/aida/AP1WRLvSbDE56lYBTZRdYr5Mc3t6mXbE3Y7V8YnekwI4Ht_JJgx7rYsICeX5TpCP90-jzl4ZEkFvijhMH_xlKcQbEQFZoqSdBz3jd1l5q_ty8yNHVZKrv8MURzvc8rjCnUsmKyRcTWZ2x3nYQ1W9XAHgA5AkiXhc78NmAZvXy0ujgAG0Qi-MpaX5AE19qGIqnIm8VDnnSMbTF2Sv36mpcQUiVPOPoOUm8yeGr4oX8EyJTXDN3ODkWlmwCqIGdTs"); background-size: cover; background-position: center top;'></div>
+<div class="relative z-10">
+<h2 class="font-headline-lg text-tertiary mb-12">The Nikkah</h2>
+<div class="flex flex-col gap-8">
+<div class="flex flex-col items-center gap-4">
+<span class="material-symbols-outlined text-primary" style='font-variation-settings: "FILL" 0; font-size: 32px;'>calendar_meal</span>
+<div class="font-body-lg text-on-surface">
+<p class="">Monday, July 13th 2026</p>
+<p class="text-sm text-on-surface-variant mt-1">28 Muharram 1448 AH</p>
+</div>
+</div>
+<div class="w-12 h-px bg-outline-variant mx-auto"></div>
+<div class="flex flex-col items-center gap-4">
+<span class="material-symbols-outlined text-primary" style='font-variation-settings: "FILL" 0; font-size: 32px;'>schedule</span>
+<div class="font-body-lg text-on-surface">
+<p class="">Ceremony at 11:00 AM</p>
+</div>
+</div>
+<div class="w-12 h-px bg-outline-variant mx-auto"></div>
+<div class="flex flex-col items-center gap-4">
+<span class="material-symbols-outlined text-primary" style='font-variation-settings: "FILL" 0; font-size: 32px;'>location_on</span>
+<div class="font-body-lg text-on-surface">
+<p class="font-medium">Darsana Event Space</p>
+<p class="text-sm text-on-surface-variant mt-1">Kuzhalmannam East, Palakkad</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Map & Directions -->
+<section class="py-[64px] px-margin md:px-xl relative">
+<div class="max-w-4xl mx-auto text-center fade-up-element fade-up-enter fade-up-enter-active">
+<div class="rounded-3xl overflow-hidden shadow-premium-card border border-outline-variant mb-8 relative h-96 bg-surface-container-low">
+<!-- Placeholder for Map -->
+<img class="w-full h-full object-cover mix-blend-luminosity opacity-70 sepia-[.3] invert" data-alt="A highly detailed overhead map view of Palakkad, India, showing streets and terrain in a muted, elegant light color palette matching the modern minimalist theme." data-location="Palakkad" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGEBHIXR_BsbDJtyIz2Ih_29KKxk6-AR1ieQa1Bf_o--oYA6mlmiW99OhSgjqmpMwPqXQiRbMqFIxSkwS9ntJM8bLIyYtvbkCH1KtoUVKf7AIXpsMddkuBx1uJPOn6ckv1_dPr5JE5L8eEkbwmpkOr_ZDxKHFIXSa6c5LNPeN5kVKd60rDUEumLs_02Jt9F-ZqLuiiMLU8eblCIY6yrinsIt-SzzK9NeO2mBGgV08XDjpn67hKXq0i3gChZGJTNSjmEnqP7T2sx5Fn"/>
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="bg-surface/90 backdrop-blur px-6 py-4 rounded-xl border border-outline-variant flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" style='font-variation-settings: "FILL" 1;'>pin_drop</span>
+<span class="font-body-md font-medium text-on-surface">Darsana Event Space</span>
+</div>
+</div>
+</div>
+<a class="inline-flex items-center gap-2 px-8 py-4 bg-transparent border border-outline-variant text-on-surface hover:bg-surface-variant transition-colors rounded-full font-label-md uppercase tracking-wider" href="https://maps.app.goo.gl/phyYXosbhgFozS9q6?g_st=ac" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined" style="font-size: 20px;">directions</span>
+                    Get Directions
+                </a>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-[64px] md:py-[120px] px-margin md:px-xl text-center flex flex-col items-center justify-center min-h-[409px] relative">
+<div class="absolute inset-0 opacity-15 pointer-events-none">
+<img class="w-full h-full object-cover mix-blend-screen invert" src="https://lh3.googleusercontent.com/aida/AP1WRLvSbDE56lYBTZRdYr5Mc3t6mXbE3Y7V8YnekwI4Ht_JJgx7rYsICeX5TpCP90-jzl4ZEkFvijhMH_xlKcQbEQFZoqSdBz3jd1l5q_ty8yNHVZKrv8MURzvc8rjCnUsmKyRcTWZ2x3nYQ1W9XAHgA5AkiXhc78NmAZvXy0ujgAG0Qi-MpaX5AE19qGIqnIm8VDnnSMbTF2Sv36mpcQUiVPOPoOUm8yeGr4oX8EyJTXDN3ODkWlmwCqIGdTs"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface/40 via-transparent to-transparent"></div>
+</div>
+<div class="relative z-10">
+<h2 class="font-headline-md text-on-surface mb-8">We look forward to celebrating with you</h2>
+<button class="px-10 py-4 bg-primary text-on-primary rounded-full font-label-md uppercase tracking-wider hover:scale-[1.02] hover:shadow-premium-btn transition-all duration-300" onclick="openRSVP()">
+                 RSVP Now
+             </button>
+</div>
+</section>
+</main>
+<!-- Footer (From JSON) -->
+<footer class="text-on-surface w-full py-12 flex flex-col items-center gap-md border-t border-outline-variant fade-in transition-opacity bg-surface-container-low/50">
+<div>
+</div>
+<nav class="flex gap-6">
+</nav>
+<p class="font-body-md text-on-surface-variant mt-4">With love, family &amp; friends</p>
+</footer>
+<!-- RSVP Modal Overlay -->
+<div class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4" id="rsvpModal">
+<!-- Backdrop -->
+<div class="absolute inset-0 bg-[#000]/70 backdrop-blur-sm transition-opacity" onclick="closeRSVP()"></div>
+<!-- Modal Content -->
+<div class="relative bg-surface/90 backdrop-blur-md w-full max-w-md rounded-3xl p-8 shadow-premium-card border border-outline-variant modal-leave overflow-hidden" id="rsvpContent">
+<div class="absolute top-0 left-0 w-full h-24 opacity-10 pointer-events-none mix-blend-screen invert" style="background-image: url('https://lh3.googleusercontent.com/aida/AP1WRLvSbDE56lYBTZRdYr5Mc3t6mXbE3Y7V8YnekwI4Ht_JJgx7rYsICeX5TpCP90-jzl4ZEkFvijhMH_xlKcQbEQFZoqSdBz3jd1l5q_ty8yNHVZKrv8MURzvc8rjCnUsmKyRcTWZ2x3nYQ1W9XAHgA5AkiXhc78NmAZvXy0ujgAG0Qi-MpaX5AE19qGIqnIm8VDnnSMbTF2Sv36mpcQUiVPOPoOUm8yeGr4oX8EyJTXDN3ODkWlmwCqIGdTs'); background-size: cover;"></div>
+<button class="absolute top-4 right-4 text-on-surface-variant hover:text-primary transition-colors z-10" onclick="closeRSVP()">
+<span class="material-symbols-outlined">close</span>
+</button>
+<div class="relative z-10">
+<h3 class="font-headline-md text-primary text-center mb-2">RSVP</h3>
+<p class="font-body-md text-on-surface-variant text-center mb-8">Kindly respond by July 1st, 2026</p>
+<form class="flex flex-col gap-6" id="rsvpForm" onsubmit="submitRSVP(event)">
+<div>
+<label class="block font-label-md text-on-surface mb-2" for="name">Full Name</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant focus:border-primary focus:ring-0 px-0 py-2 font-body-md text-on-surface placeholder:text-on-surface-variant/50 transition-colors" id="name" placeholder="e.g. Jane Doe" required="" type="text"/>
+</div>
+<div>
+<label class="block font-label-md text-on-surface mb-3">Will you be attending?</label>
+<div class="flex gap-4">
+<label class="flex-1 cursor-pointer">
+<input class="peer sr-only" name="attending" required="" type="radio" value="yes"/>
+<div class="text-center py-3 border border-outline-variant rounded-xl peer-checked:bg-surface-variant peer-checked:text-on-surface peer-checked:border-primary transition-all font-body-md">
+                                Joyfully Accept
+                            </div>
+</label>
+<label class="flex-1 cursor-pointer">
+<input class="peer sr-only" name="attending" type="radio" value="no"/>
+<div class="text-center py-3 border border-outline-variant rounded-xl peer-checked:bg-surface-container-low peer-checked:text-on-surface-variant transition-all font-body-md">
+                                Regretfully Decline
+                            </div>
+</label>
+</div>
+</div>
+<div>
+<label class="block font-label-md text-on-surface mb-2" for="guests">Number of Guests</label>
+<select class="w-full bg-transparent border-0 border-b border-outline-variant focus:border-primary focus:ring-0 px-0 py-2 font-body-md text-on-surface" id="guests">
+<option class="bg-surface" value="1">1</option>
+<option class="bg-surface" value="2">2</option>
+<option class="bg-surface" value="3">3</option>
+<option class="bg-surface" value="4">4+</option>
+</select>
+</div>
+<button class="mt-4 w-full py-4 bg-primary text-on-primary rounded-full font-label-md uppercase tracking-wider hover:bg-primary/90 transition-colors shadow-premium-btn" type="submit">
+                    Send Reply
+                </button>
+</form>
+<!-- Success State (Hidden by default) -->
+<div class="hidden flex-col items-center justify-center text-center py-8" id="rsvpSuccess">
+<span class="material-symbols-outlined text-primary mb-4" style='font-size: 48px; font-variation-settings: "FILL" 1;'>check_circle</span>
+<h4 class="font-headline-md text-on-surface mb-2">Thank You!</h4>
+<p class="font-body-md text-on-surface-variant">Your response has been recorded beautifully.</p>
+<button class="mt-8 px-6 py-2 border border-outline-variant rounded-full font-label-md text-on-surface hover:bg-surface-variant transition-colors" onclick="closeRSVP()">
+                    Close
+                </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive Scripts -->
+<script>
+        // Countdown Logic
+        const targetDate = new Date('July 13, 2026 11:00:00').getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            if (distance < 0) {
+                document.getElementById('days').innerText = "00";
+                document.getElementById('hours').innerText = "00";
+                document.getElementById('minutes').innerText = "00";
+                document.getElementById('seconds').innerText = "00";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').innerText = String(days).padStart(2, '0');
+            document.getElementById('hours').innerText = String(hours).padStart(2, '0');
+            document.getElementById('minutes').innerText = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').innerText = String(seconds).padStart(2, '0');
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // Scroll Animation Observer (Framer Motion style fade-up)
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-up-enter-active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-up-element').forEach((el) => {
+            observer.observe(el);
+        });
+
+        // RSVP Modal Logic
+        const modal = document.getElementById('rsvpModal');
+        const modalContent = document.getElementById('rsvpContent');
+        const rsvpForm = document.getElementById('rsvpForm');
+        const rsvpSuccess = document.getElementById('rsvpSuccess');
+
+        function openRSVP() {
+            modal.classList.remove('hidden');
+            // Trigger reflow to ensure transition works
+            void modal.offsetWidth;
+            modalContent.classList.remove('modal-leave');
+            modalContent.classList.add('modal-enter-active');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+
+        function closeRSVP() {
+            modalContent.classList.remove('modal-enter-active');
+            modalContent.classList.add('modal-leave-active');
+            
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modalContent.classList.remove('modal-leave-active');
+                modalContent.classList.add('modal-leave');
+                document.body.style.overflow = '';
+                
+                // Reset form state after closing
+                setTimeout(() => {
+                    rsvpForm.reset();
+                    rsvpForm.classList.remove('hidden');
+                    rsvpSuccess.classList.add('hidden');
+                    rsvpSuccess.classList.remove('flex');
+                }, 300);
+            }, 300);
+        }
+
+        function submitRSVP(e) {
+            e.preventDefault();
+            // Simulate API call
+            const btn = e.target.querySelector('button[type="submit"]');
+            const originalText = btn.innerText;
+            btn.innerText = 'Sending...';
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                rsvpForm.classList.add('hidden');
+                rsvpSuccess.classList.remove('hidden');
+                rsvpSuccess.classList.add('flex');
+                btn.innerText = originalText;
+                btn.disabled = false;
+            }, 800);
+        }
+    </script>
+</body></html>
