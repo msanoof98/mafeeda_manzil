@@ -6,36 +6,60 @@ html {
   scroll-behavior: smooth;
 }
 
-:root {
-  /* Warm pastel palette */
-  --bg-primary: #f5e6e0;       /* Soft blush */
-  --bg-card: rgba(255, 249, 245, 0.75);  /* Warm cream, semi-transparent */
-  --bg-card-solid: #fff9f5;
-  --bg-accent: rgba(180, 148, 130, 0.12); /* Warm taupe tint */
-  --text-primary: #3b3330;      /* Warm dark brown */
-  --text-heading: #5c3d2e;      /* Rich warm brown */
-  --text-muted: #9c8578;        /* Dusty rose-brown */
-  --text-accent: #7a5c50;       /* Muted terracotta */
-  --accent-primary: #8b6f5c;    /* Warm taupe */
-  --accent-hover: #6d503f;      /* Deeper taupe */
-  --ring-color: rgba(180, 148, 130, 0.3);
-  --shadow-color: rgba(90, 60, 40, 0.08);
-}
-
 body {
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
-  font-family: 'Inter', sans-serif;
+  background-color: #26221e; /* taupe-950 */
+  color: #e9e6e1; /* taupe-100 */
+  font-family: "Inter", system-ui, sans-serif;
+  overflow-x: hidden;
 }
 
-/* Custom scrollbar for premium feel */
-::-webkit-scrollbar {
-  width: 6px;
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #26221e; }
+::-webkit-scrollbar-thumb { background: #564f43; border-radius: 999px; }
+::-webkit-scrollbar-thumb:hover { background: #696052; }
+
+/* ── Soft dark card ── */
+.soft-card {
+  background: rgba(60, 55, 49, 0.4); /* taupe-900 with opacity */
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(208, 175, 131, 0.12); /* champagne border */
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.15),
+    0 1px 3px rgba(0, 0, 0, 0.08);
 }
-::-webkit-scrollbar-track {
-  background: var(--bg-primary);
+
+/* ── Champagne accent text ── */
+.gold-accent {
+  background: linear-gradient(
+    135deg,
+    #dfcbac 0%,
+    #c29761 30%,
+    #f6f2e9 50%,
+    #c29761 70%,
+    #dfcbac 100%
+  );
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: softShimmer 6s ease-in-out infinite;
 }
-::-webkit-scrollbar-thumb {
-  background: var(--accent-primary);
-  border-radius: 3px;
+
+@keyframes softShimmer {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ── Focus ring ── */
+input:focus, select:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(208, 175, 131, 0.3) !important;
+}
+
+/* ── Subtle glowing background element ── */
+.glow-bg {
+  background: radial-gradient(circle at 50% 50%, rgba(208,175,131,0.06) 0%, transparent 60%);
 }
